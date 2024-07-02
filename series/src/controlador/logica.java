@@ -5,8 +5,6 @@
 package controlador;
 
 import java.awt.CardLayout;
-import java.util.HashMap;
-import java.util.Map;
 import javax.swing.JOptionPane;
 import modelo.Series;
 import modelo.ValidarEntrada;
@@ -150,11 +148,7 @@ public class logica {
         if (input.isEmpty()) {
             JOptionPane.showMessageDialog(null, "La entrada está vacía");
         } else {            
-            // Se cambia el valor de pi en input por su valor decimal
-            input = input.replaceAll("\\bpi\\b", String.valueOf(pi));
-            
-            // Se cambia el valor de e en input por su valor decimal
-            input = input.replaceAll("\\be\\b", String.valueOf(e));
+           input = input.replaceAll("\\s", "");
             
             if(ValidarEntrada.isValidNumber(input)){
                 
@@ -255,7 +249,4 @@ public class logica {
 
     private Vista vista;
     private CardLayout card;
-    
-     private final static double pi = 3.141592653589;
-    private final static double e = 2.7182818284;
 }

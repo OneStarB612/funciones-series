@@ -4,37 +4,12 @@
  */
 package modelo;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
-
 /**
  *
  * @author steve
  */
 public class Series {
-    /*
-    // metodo para calcular el factorial
-    public static String sin(BigDecimal inp){ // recibe un bigdecimal del txt de la serie que lo llamo
-        BigDecimal res = new BigDecimal(0); // el valor que retorna
-        for(int k = 0; k <= 55; k++){
-      // res.add(BigDecimal((String.format("%s", ((Factorial.calcularFactorial((2 * k + 1))) )))) );
-       
-       
-        }
-        return "";
-    }
-    
-    public static String ciclo(int cic, BigDecimal base){
-        
-        
-        
-        return String.format("(%s)/(%s)", Potencia.potencia(base, cic), (Factorial.calcularFactorial((2 * cic + 1))));
-    }
-    */
-    
-    /*
-    segun el valor en el campo de texto del sin(x) el metodo calculara su valor
-    */
+   
     public static String sin(double input) {
     
     // esto es lo que devolverá el método, empieza en cero porque es una suma
@@ -46,7 +21,7 @@ public class Series {
     // esto es para alternar el signo de cada suma parcial
     int alternar = 1;
     
-    for (int k = 0; k <= 30; k++) {
+    for (int k = 0; k <= 35; k++) {
         
         // Calcular el término de la serie de Taylor para sin(x)
         sumaParcial = Potencia.potencia(input, (2 * k) + 1) / Factorial.calcularFactorial((2 * k) + 1);
@@ -77,7 +52,7 @@ public class Series {
         }
         */
         
-        for(int k = 0; k <= 30; k++){
+        for(int k = 0; k <= 35; k++){
             
             sumaParcial = Potencia.potencia(input, (2 *k)) / Factorial.calcularFactorial(2 * k);
             
@@ -94,8 +69,8 @@ public class Series {
         
     } // fin del metodo cos
     
-    // inicio para calcular el arcoseno(x)
     
+    // << Inicio para calcular el arcoseno(x). >>
     public static String arcoSin(double entrada) {
         /*
         BigDecimal valorASin = BigDecimal.ZERO;

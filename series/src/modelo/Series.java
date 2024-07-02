@@ -21,7 +21,7 @@ public class Series {
     // esto es para alternar el signo de cada suma parcial
     int alternar = 1;
     
-    for (int k = 0; k <= 35; k++) {
+    for (int k = 0; k <= ConstantesMatematicas.contador; k++) {
         
         // Calcular el término de la serie de Taylor para sin(x)
         sumaParcial = Potencia.potencia(input, (2 * k) + 1) / Factorial.calcularFactorial((2 * k) + 1);
@@ -52,7 +52,7 @@ public class Series {
         }
         */
         
-        for(int k = 0; k <= 35; k++){
+        for(int k = 0; k <= ConstantesMatematicas.contador; k++){
             
             sumaParcial = Potencia.potencia(input, (2 *k)) / Factorial.calcularFactorial(2 * k);
             
@@ -106,7 +106,7 @@ public class Series {
         return "Undefine";
     }
     
-    for (int n = 0; n < 50; n++) {
+    for (int n = 0; n < ConstantesMatematicas.contador; n++) {
         
         double coeficiente = Coeficientes.calcularCoeficiente(n);
         
@@ -115,7 +115,7 @@ public class Series {
         valorASin += sumaParcial;
     }
     
-    return Double.toString(valorASin);
+    return String.format(".8f", valorASin);
         
         
     }

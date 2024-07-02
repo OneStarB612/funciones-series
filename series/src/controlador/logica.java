@@ -7,9 +7,10 @@ package controlador;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import modelo.Series;
+import modelo.TablaCasos;
 import modelo.ValidarEntrada;
+import modelo.ValorTabla;
 import vista.Vista;
-
 
 /**
  *
@@ -116,9 +117,26 @@ public class logica {
         this.vista.setVisible(true);
     }
 
-    
     private void btnSinMouseClicked() {
+        
         String input = this.vista.txtSinInput.getText();
+
+        if (input.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "La entrada está vacía");
+        } else {
+            input = input.replaceAll("\\s", "");
+
+            if (TablaCasos.casoCoincide(input)) {
+                this.vista.txtAreaSinOutput.setText(Series.sin(ValorTabla.obtenerValor(input)));
+            } else {
+
+                if (ValidarEntrada.isValidNumber(input)) {
+                    this.vista.txtAreaSinOutput.setText(Series.sin(Double.parseDouble(input)));
+                }
+            }
+        }
+            
+       /* String input = this.vista.txtSinInput.getText();
 
         if (input.isEmpty()) {
             JOptionPane.showMessageDialog(null, "La entrada está vacía");
@@ -129,8 +147,8 @@ public class logica {
                 this.vista.txtAreaSinOutput.setText(Series.sin(Double.parseDouble(input)));
 
             }
-            */
-        }
+             
+        }*/
 
     }
 
@@ -147,23 +165,18 @@ public class logica {
 
         if (input.isEmpty()) {
             JOptionPane.showMessageDialog(null, "La entrada está vacía");
-        } else {            
-           input = input.replaceAll("\\s", "");
-            
-            if(ValidarEntrada.isValidNumber(input)){
-                
-            try {
-                double entrada = Double.parseDouble(input);
-                this.vista.txtAreaASin.setText(Series.arcoSin(entrada));
+        } else {
+            input = input.replaceAll("\\s", "");
+
+            if (TablaCasos.casoCoincide(input)) {
+                this.vista.txtAreaASin.setText(Series.arcoSin(ValorTabla.obtenerValor(input)));
+            } else {
+
+                if (ValidarEntrada.isValidNumber(input)) {
+                    this.vista.txtAreaASin.setText(Series.arcoSin(Double.parseDouble(input)));
+                }
             }
-            catch (NumberFormatException es){
-                JOptionPane.showMessageDialog(null, "Entrada invalida");
-            }
-            }
-        
-            
-            
-            
+
             /*
            try {
               //  double value = convertStringToDouble(s);
@@ -177,7 +190,7 @@ public class logica {
             } catch (ScriptException e) {
                 JOptionPane.showMessageDialog(null, "Entrada invalida "+ e.getMessage());
             }
-            */
+             */
         }
     }
 
@@ -244,8 +257,6 @@ public class logica {
         this.vista.txtAreaASin.setText("");
 
     }
-    
-     
 
     private Vista vista;
     private CardLayout card;

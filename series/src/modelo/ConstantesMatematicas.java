@@ -18,4 +18,12 @@ public class ConstantesMatematicas {
     
     public final static double sqrt3 = 1.732050807;
     
+    public final static int contador = 55;
+    //0.20787957
+    
+    public final static double iElevadoi = 0.20787957;
+    
+    //4.8104773
+    public final static double iElevadoAMenosi = 4.8104773;
+    
 }

@@ -30,11 +30,11 @@ public class Series {
         alternar *= -1;
     }
     
-    return Double.toString(valorRetorno);
+    return String.format("%.8f", valorRetorno);
 }
     
     // inicio para calcular el cos(x)
-    public static double cos(double input){
+    public static String cos(double input){
         
        double valorCos = 0;
         
@@ -65,7 +65,7 @@ public class Series {
                     
         }
         
-        return valorCos;
+        return String.format("%.8f", valorCos);
         
     } // fin del metodo cos
     
@@ -115,7 +115,7 @@ public class Series {
         valorASin += sumaParcial;
     }
     
-    return String.format(".8f", valorASin);
+    return String.format("%.8f", valorASin);
         
         
     }

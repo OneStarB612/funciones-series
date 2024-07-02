@@ -96,7 +96,7 @@ public class logica {
             }
         });
 
-        this.vista.btnASin.addMouseListener(new java.awt.event.MouseAdapter() {
+        this.vista.btnASinIgual.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnASinMouseClicked();
@@ -107,6 +107,34 @@ public class logica {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnLimpiarASinMouseClicked();
+            }
+        });
+        
+        this.vista.labelCosEleccion.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelCosEleccionMouseClicked();
+            }
+        });
+        
+         this.vista.btnBackCos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackCosMouseClicked();
+            }
+        });
+         
+         this.vista.btnIgualCos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIgualCosMouseClicked();
+            }
+        });
+         
+        this.vista.btnLimpiarCos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimpiarCosMouseClicked();
             }
         });
 
@@ -158,10 +186,10 @@ public class logica {
         this.vista.txtAreaSinOutput.setText("");
 
     }
-
-    private void btnASinMouseClicked() {
-
-        String input = this.vista.txtASin.getText();
+    
+     private void btnIgualCosMouseClicked() {
+         
+        String input = this.vista.txtInputCos.getText();
 
         if (input.isEmpty()) {
             JOptionPane.showMessageDialog(null, "La entrada está vacía");
@@ -169,11 +197,37 @@ public class logica {
             input = input.replaceAll("\\s", "");
 
             if (TablaCasos.casoCoincide(input)) {
-                this.vista.txtAreaASin.setText(Series.arcoSin(ValorTabla.obtenerValor(input)));
+                this.vista.txtAreaOutputCos.setText(Series.cos(ValorTabla.obtenerValor(input)));
             } else {
 
                 if (ValidarEntrada.isValidNumber(input)) {
-                    this.vista.txtAreaASin.setText(Series.arcoSin(Double.parseDouble(input)));
+                    this.vista.txtAreaOutputCos.setText(Series.cos(Double.parseDouble(input)));
+                }
+            }
+        }
+    }
+     
+     private void btnLimpiarCosMouseClicked()
+    {
+        this.vista.txtInputCos.setText("");
+        this.vista.txtAreaOutputCos.setText("");
+    }
+
+    private void btnASinMouseClicked() {
+
+        String input = this.vista.txtASinInput.getText();
+
+        if (input.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "La entrada está vacía");
+        } else {
+            input = input.replaceAll("\\s", "");
+
+            if (TablaCasos.casoCoincide(input)) {
+                this.vista.txtAreaASinOutput.setText(Series.arcoSin(ValorTabla.obtenerValor(input)));
+            } else {
+
+                if (ValidarEntrada.isValidNumber(input)) {
+                    this.vista.txtAreaASinOutput.setText(Series.arcoSin(Double.parseDouble(input)));
                 }
             }
 
@@ -196,8 +250,8 @@ public class logica {
 
     private void btnLimpiarASinMouseClicked() {
 
-        this.vista.txtASin.setText("");
-        this.vista.txtAreaASin.setText("");
+        this.vista.txtASinInput.setText("");
+        this.vista.txtAreaASinOutput.setText("");
     }
 
     /*
@@ -238,6 +292,26 @@ public class logica {
         this.vista.txtSinInput.setText("");
         this.vista.txtAreaSinOutput.setText("");
     }
+    
+    private void labelCosEleccionMouseClicked() {                                              
+        // TODO add your handling code here:
+        
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "vistaCos");
+        
+        
+    }
+    
+    private void btnBackCosMouseClicked() {                                        
+        // TODO add your handling code here:
+        
+         card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "eleccion");
+        this.vista.txtInputCos.setText("");
+        this.vista.txtAreaOutputCos.setText("");
+    }
 
     private void btnAsinMouseClicked() {
         // TODO add your handling code here:
@@ -253,8 +327,8 @@ public class logica {
         card = (CardLayout) this.vista.prinCard.getLayout();
 
         card.show(this.vista.prinCard, "eleccion");
-        this.vista.txtASin.setText("");
-        this.vista.txtAreaASin.setText("");
+        this.vista.txtASinInput.setText("");
+        this.vista.txtAreaASinOutput.setText("");
 
     }
 

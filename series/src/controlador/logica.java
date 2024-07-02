@@ -137,6 +137,34 @@ public class logica {
                 btnLimpiarCosMouseClicked();
             }
         });
+        
+        this.vista.btnBackArcCos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackArcCosMouseClicked();
+            }
+        });
+        
+        this.vista.labelArcCosEleccion.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelArcCosEleccionMouseClicked();
+            }
+        });
+        
+        this.vista.btnIgualArcCos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIgualArcCosMouseClicked();
+            }
+        });
+        
+        this.vista.btnLimpiarArcCos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimpiarArcCosMouseClicked();
+            }
+        });
 
         this.vista.txtAreaSinOutput.setLineWrap(true);
 
@@ -144,7 +172,120 @@ public class logica {
 
         this.vista.setVisible(true);
     }
+    
+    private void labelSalirMouseClicked()
+    {
+        this.vista.dispose();
+    }
+    
+    /*
+    ********************************************************************************************
+    ****Aqui comienzan los metodos para los eventos de click de aquellos labels encargados de***
+    ****cambiar la vista de ventana del CardLayout actual por el de la serie seleccionada.******
+    ****Ademas de los label de cada funcion que regresan de esa ventana a la vista de eleccion,*
+    ****cada uno seguido por su correspondiente.************************************************
+    ********************************************************************************************
+    */
+    
+    // Metodo para pasar a la ventana de eleccion de series.
+    private void labelIniciarMouseClicked()
+    {
+        card = (CardLayout) this.vista.prinCard.getLayout();
 
+        card.show(this.vista.prinCard, "eleccion");
+    }
+
+    // Metodo para regresar de la ventana de eleccion a la ventana de inicio.
+    private void labelBackMouseClicked()
+    {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "principal");
+    }
+
+    // Metodo para pasar de la ventana de eleccion a la ventana de Sin(x).
+    private void labelSinMouseClicked() {
+        
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "vistaSin");
+    }
+
+    private void backSinMouseClicked()
+    {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "eleccion");
+        
+        this.vista.txtSinInput.setText("");
+        
+        this.vista.txtAreaSinOutput.setText("");
+    }
+    
+    private void labelCosEleccionMouseClicked()
+    {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "vistaCos");
+    }
+    
+    private void btnBackCosMouseClicked()
+    {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "eleccion");
+        
+        this.vista.txtInputCos.setText("");
+        
+        this.vista.txtAreaOutputCos.setText("");
+    }
+
+    private void btnAsinMouseClicked()
+    {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "vistaASin");
+    }
+
+    private void btnBackASinMouseClicked()
+    {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "eleccion");
+        
+        this.vista.txtASinInput.setText("");
+        
+        this.vista.txtAreaASinOutput.setText("");
+
+    }
+    
+    private void labelArcCosEleccionMouseClicked()
+    {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "vistaArcCos");
+    } 
+    
+    private void btnBackArcCosMouseClicked()
+    {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "eleccion");
+        
+        this.vista.txtInputArcCos.setText("");
+        
+        this.vista.txtAreaOutputArcCos.setText("");
+    } 
+    
+    
+    /*
+    |------------------------------------------------------------------------------------------------|
+    |----Aqui empiezan los metodos para los label de igual de cada vista de serie correspondiente,---|
+    |----debajo de cada uno esta su label o boton para limpiar las entrada en el txt y txtArea.------|
+    |------------------------------------------------------------------------------------------------|
+    */
+    
+    
     private void btnSinMouseClicked() {
         
         String input = this.vista.txtSinInput.getText();
@@ -180,19 +321,19 @@ public class logica {
 
     }
 
-    private void btnLimpiarSinMouseClicked() {
-
+    private void btnLimpiarSinMouseClicked()
+    {
         this.vista.txtSinInput.setText("");
+        
         this.vista.txtAreaSinOutput.setText("");
-
     }
     
-     private void btnIgualCosMouseClicked() {
-         
-        String input = this.vista.txtInputCos.getText();
+    private void btnIgualCosMouseClicked()
+    {
+       String input = this.vista.txtInputCos.getText();
 
-        if (input.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "La entrada está vacía");
+       if (input.isEmpty()) {
+           JOptionPane.showMessageDialog(null, "La entrada está vacía");
         } else {
             input = input.replaceAll("\\s", "");
 
@@ -207,13 +348,15 @@ public class logica {
         }
     }
      
-     private void btnLimpiarCosMouseClicked()
+    private void btnLimpiarCosMouseClicked()
     {
-        this.vista.txtInputCos.setText("");
-        this.vista.txtAreaOutputCos.setText("");
+       this.vista.txtInputCos.setText("");
+        
+       this.vista.txtAreaOutputCos.setText("");
     }
 
-    private void btnASinMouseClicked() {
+    private void btnASinMouseClicked()
+    {
 
         String input = this.vista.txtASinInput.getText();
 
@@ -247,91 +390,43 @@ public class logica {
              */
         }
     }
-
-    private void btnLimpiarASinMouseClicked() {
-
+    
+    private void btnLimpiarASinMouseClicked()
+    {
         this.vista.txtASinInput.setText("");
+        
         this.vista.txtAreaASinOutput.setText("");
     }
+    
+    private void btnIgualArcCosMouseClicked()
+    {
+        String input = this.vista.txtInputArcCos.getText();
 
-    /*
-    codigo para el manejo de eventos del label iniciar, al presionar se pasara a la vista de elecciones
-     */
-    private void labelIniciarMouseClicked() {
-        // TODO add your handling code here:
-        card = (CardLayout) this.vista.prinCard.getLayout();
+       if (input.isEmpty()) {
+           JOptionPane.showMessageDialog(null, "La entrada está vacía");
+        } else {
+            input = input.replaceAll("\\s", "");
 
-        card.show(this.vista.prinCard, "eleccion");
-    }
+            if (TablaCasos.casoCoincide(input)) {
+                this.vista.txtAreaOutputArcCos.setText(Series.arcCos(ValorTabla.obtenerValor(input)));
+            } else {
 
-    private void labelBackMouseClicked() {
-        // TODO add your handling code here:
-        card = (CardLayout) this.vista.prinCard.getLayout();
-
-        card.show(this.vista.prinCard, "principal");
-    }
-
-    private void labelSalirMouseClicked() {
-        // TODO add your handling code here:
-
-        this.vista.dispose();
-    }
-
-    private void labelSinMouseClicked() {
-        // TODO add your handling code here:
-        card = (CardLayout) this.vista.prinCard.getLayout();
-
-        card.show(this.vista.prinCard, "vistaSin");
-    }
-
-    private void backSinMouseClicked() {
-        // TODO add your handling code here:
-        card = (CardLayout) this.vista.prinCard.getLayout();
-
-        card.show(this.vista.prinCard, "eleccion");
-        this.vista.txtSinInput.setText("");
-        this.vista.txtAreaSinOutput.setText("");
+                if (ValidarEntrada.isValidNumber(input)) {
+                    this.vista.txtAreaOutputArcCos.setText(Series.arcCos(Double.parseDouble(input)));
+                }
+            }
+        }
     }
     
-    private void labelCosEleccionMouseClicked() {                                              
-        // TODO add your handling code here:
+    private void btnLimpiarArcCosMouseClicked()
+    {
+        this.vista.txtInputArcCos.setText("");
         
-        card = (CardLayout) this.vista.prinCard.getLayout();
-
-        card.show(this.vista.prinCard, "vistaCos");
-        
-        
-    }
-    
-    private void btnBackCosMouseClicked() {                                        
-        // TODO add your handling code here:
-        
-         card = (CardLayout) this.vista.prinCard.getLayout();
-
-        card.show(this.vista.prinCard, "eleccion");
-        this.vista.txtInputCos.setText("");
-        this.vista.txtAreaOutputCos.setText("");
+        this.vista.txtAreaOutputArcCos.setText("");
     }
 
-    private void btnAsinMouseClicked() {
-        // TODO add your handling code here:
 
-        card = (CardLayout) this.vista.prinCard.getLayout();
-
-        card.show(this.vista.prinCard, "vistaASin");
-    }
-
-    private void btnBackASinMouseClicked() {
-        // TODO add your handling code here:
-
-        card = (CardLayout) this.vista.prinCard.getLayout();
-
-        card.show(this.vista.prinCard, "eleccion");
-        this.vista.txtASinInput.setText("");
-        this.vista.txtAreaASinOutput.setText("");
-
-    }
-
+    // variables
     private Vista vista;
     private CardLayout card;
 }

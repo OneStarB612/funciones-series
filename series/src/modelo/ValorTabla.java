@@ -283,7 +283,6 @@ public class ValorTabla {
         if (caso.equalsIgnoreCase("-e/pi")) return -ConstantesMatematicas.e / ConstantesMatematicas.pi;
         if (caso.equalsIgnoreCase("e/pi")) return ConstantesMatematicas.e / ConstantesMatematicas.pi;
         if (caso.equalsIgnoreCase("pi/e")) return ConstantesMatematicas.pi / ConstantesMatematicas.e;
-        
         if (caso.equalsIgnoreCase("-e*pi")) return -ConstantesMatematicas.e * ConstantesMatematicas.pi;
     if (caso.equalsIgnoreCase("-e*2*pi")) return -ConstantesMatematicas.e * 2 * ConstantesMatematicas.pi;
     if (caso.equalsIgnoreCase("-e*3*pi")) return -ConstantesMatematicas.e * 3 * ConstantesMatematicas.pi;

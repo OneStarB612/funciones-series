@@ -119,5 +119,31 @@ public class Series {
         
         
     }
-    // fin del metodo arcoseno
+    // fin del metodo ArcSin
+    
+    // Inicio del metodo ArcCos(x)
+    
+    public static String arcCos(double DatoEntrada)
+    {
+        if(DatoEntrada < -1 || DatoEntrada > 1){
+            return "Undefine";
+        }
+        
+        if(DatoEntrada == 0)
+        {
+            return String.format("%.8f", (ConstantesMatematicas.pi/2));
+        }
+        
+        if(DatoEntrada == -1)
+        {
+            return String.format("%.8f", (ConstantesMatematicas.pi));
+        }
+        
+        if(DatoEntrada == 1)
+        {
+            return String.format("0.0");
+        }
+        
+        return String.format("%.8f", ((ConstantesMatematicas.pi/2)-Double.parseDouble(arcoSin(DatoEntrada))));
+    }
 }

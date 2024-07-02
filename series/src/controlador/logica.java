@@ -5,253 +5,257 @@
 package controlador;
 
 import java.awt.CardLayout;
-import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import modelo.Series;
+import modelo.ValidarEntrada;
 import vista.Vista;
+
 
 /**
  *
  * @author steve
  */
 public class logica {
-    
-    
-    
-    public logica(Vista vista){
+
+    public logica(Vista vista) {
         this.vista = vista;
-        
-        //se agrega el evento click para iniciar
+
+        // Se agrega el evento click para el label de iniciar.
         this.vista.labelIniciar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelIniciarMouseClicked();
             }
         });
-        
+
+        // Evento para el label back de la ventana de seleccion y regresar a inicio.
         this.vista.btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelBackMouseClicked();
             }
         });
-        
+
+        // Evento para el label salir que cierra el programa.
         this.vista.labelSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelSalirMouseClicked();
             }
         });
-        
-        this.vista.labelSin.addMouseListener(new java.awt.event.MouseAdapter() {
+
+        // Evento para el labelSinEleccion y cambiar a la ventana del vistaSin.
+        // no confundir con el labelSinX
+        this.vista.labelSinEleccion.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelSinMouseClicked();
             }
         });
-        
-        this.vista.btnBackSin.addMouseListener(new java.awt.event.MouseAdapter() {
+
+        // Evento para el boton labelBackSin en la ventana vistaSin y volver a la ventana de eleccion.
+        this.vista.labelBackSin.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backSinMouseClicked();
             }
         });
-        
-        this.vista.btnSin.addMouseListener(new java.awt.event.MouseAdapter() {
+
+        // Evento para el labelIgualSinx que esta en la ventana de vistaSin, al presionar mostrara el valor del sinx.
+        // No confundir con el labelSinEleccion.
+        this.vista.labelIgualSinX.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSinMouseClicked();
             }
         });
-        
-        this.vista. btnLimpiarSin.addMouseListener(new java.awt.event.MouseAdapter() {
+
+        // Evento para el labelLimpiarSin que esta en el vistaSin.
+        // Limpiara el interior del txtSin y txtAreaSin.
+        this.vista.labelLImpiarSin.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnLimpiarSinMouseClicked();
             }
         });
-        
-        this.vista. btnAsin.addMouseListener(new java.awt.event.MouseAdapter() {
+
+        // evento para el labelASinEleccion que esta en la ventana de eleccion.
+        // cambiara a la ventana de vistaASin
+        this.vista.labelASinEleccion.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAsinMouseClicked();
             }
         });
-        
+
         this.vista.btnBackASin.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnBackASinMouseClicked();
             }
         });
-        
+
         this.vista.btnASin.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnASinMouseClicked();
             }
         });
-        
+
         this.vista.btnLimpiarASin.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnLimpiarASinMouseClicked();
             }
         });
-        
-        this.vista.txtAreaSin.setLineWrap(true);
-        
-        this.vista.txtAreaSin.setWrapStyleWord(true);
-        
+
+        this.vista.txtAreaSinOutput.setLineWrap(true);
+
+        this.vista.txtAreaSinOutput.setWrapStyleWord(true);
+
         this.vista.setVisible(true);
     }
-    
-    
-    public static boolean isValidNumber(String input) {
-        int dotCount = 0;
-        int dotminus = 0;
-        
-         if(input.equals(".")){
-                JOptionPane.showMessageDialog(null, "Entrada inválida: no se ingreso un numero");
-                return false;
-            } else{
-        for (char c : input.toCharArray()) {
-            if (!Character.isDigit(c) && c != '.' && c != '-') {
-                JOptionPane.showMessageDialog(null, "Entrada inválida: solo se permiten números y un punto decimal.");
-                return false;
-            }
-            if (c == '.') {
-                dotCount++;
-                if (dotCount > 1) {
-                    JOptionPane.showMessageDialog(null, "Entrada inválida: solo se permite un punto decimal.");
-                    return false;
-                }
-            }
-            
-            if (c == '-') {
-                dotminus++;
-                if (dotminus > 1) {
-                    JOptionPane.showMessageDialog(null, "Entrada inválida: solo se permite un signo menos.");
-                    return false;
-                }
-            }
-            
-        } 
-         }
-        return true;
-    }
-    
-    private void btnSinMouseClicked() {                                    
-        // TODO add your handling code here:
-        String input = this.vista.txtSin.getText();
-        
-        if (input.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "La entrada está vacía");
-                } else {
-                    if (isValidNumber(input)) {
-                        
-                        this.vista.txtAreaSin.setText(Series.sin(Double.parseDouble(input)));
-                       
-                    }
-                }
-        
-    }
-    
-    private void btnLimpiarSinMouseClicked() {                                           
-        // TODO add your handling code here:
-        
-        this.vista.txtSin.setText("");
-        this.vista.txtAreaSin.setText("");
-    } 
-    
-     private void btnASinMouseClicked() {                                     
-        // TODO add your handling code here:
-        
-         String input = this.vista.txtASin.getText();
-        
-        if (input.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "La entrada está vacía");
-                } else {
-                    if (isValidNumber(input)) {
-                        
-                        this.vista.txtAreaASin.setText(Series.arcoSin(Double.parseDouble(input)));
-                       
-                    }
-                }
-    }
-     
-     private void btnLimpiarASinMouseClicked() { 
-         
-        // TODO add your handling code here:
-        
-        this.vista.txtASin.setText("");
-        this.vista.txtAreaASin.setText("");
-    } 
-    
-        
 
     
+    private void btnSinMouseClicked() {
+        String input = this.vista.txtSinInput.getText();
+
+        if (input.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "La entrada está vacía");
+        } else {
+            /*
+            if (ValidarEntrada.evaluaExpresion(input)) {
+
+                this.vista.txtAreaSinOutput.setText(Series.sin(Double.parseDouble(input)));
+
+            }
+            */
+        }
+
+    }
+
+    private void btnLimpiarSinMouseClicked() {
+
+        this.vista.txtSinInput.setText("");
+        this.vista.txtAreaSinOutput.setText("");
+
+    }
+
+    private void btnASinMouseClicked() {
+
+        String input = this.vista.txtASin.getText();
+
+        if (input.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "La entrada está vacía");
+        } else {            
+            // Se cambia el valor de pi en input por su valor decimal
+            input = input.replaceAll("\\bpi\\b", String.valueOf(pi));
+            
+            // Se cambia el valor de e en input por su valor decimal
+            input = input.replaceAll("\\be\\b", String.valueOf(e));
+            
+            if(ValidarEntrada.isValidNumber(input)){
+                
+            try {
+                double entrada = Double.parseDouble(input);
+                this.vista.txtAreaASin.setText(Series.arcoSin(entrada));
+            }
+            catch (NumberFormatException es){
+                JOptionPane.showMessageDialog(null, "Entrada invalida");
+            }
+            }
+        
+            
+            
+            
+            /*
+           try {
+              //  double value = convertStringToDouble(s);
+                //System.out.println("El valor de '" + s + "' es: " + value);
+            } catch (NumberFormatException e) {
+               // System.out.println("No se pudo convertir '" + s + "' a double: " + e.getMessage());
+            }
+            
+            try {
+                this.vista.txtAreaSinOutput.setText(Series.sin(Double.parseDouble(input)));
+            } catch (ScriptException e) {
+                JOptionPane.showMessageDialog(null, "Entrada invalida "+ e.getMessage());
+            }
+            */
+        }
+    }
+
+    private void btnLimpiarASinMouseClicked() {
+
+        this.vista.txtASin.setText("");
+        this.vista.txtAreaASin.setText("");
+    }
+
     /*
     codigo para el manejo de eventos del label iniciar, al presionar se pasara a la vista de elecciones
-    */
-     private void labelIniciarMouseClicked() {                                          
+     */
+    private void labelIniciarMouseClicked() {
         // TODO add your handling code here:
         card = (CardLayout) this.vista.prinCard.getLayout();
-        
+
         card.show(this.vista.prinCard, "eleccion");
     }
-     
-     private void labelBackMouseClicked() {                                       
+
+    private void labelBackMouseClicked() {
         // TODO add your handling code here:
         card = (CardLayout) this.vista.prinCard.getLayout();
-        
+
         card.show(this.vista.prinCard, "principal");
-    }   
-     
-      private void labelSalirMouseClicked() {                                        
+    }
+
+    private void labelSalirMouseClicked() {
         // TODO add your handling code here:
-        
+
         this.vista.dispose();
     }
 
-      
-      private void labelSinMouseClicked() {                                      
+    private void labelSinMouseClicked() {
         // TODO add your handling code here:
         card = (CardLayout) this.vista.prinCard.getLayout();
-        
+
         card.show(this.vista.prinCard, "vistaSin");
-    } 
-    
-       private void backSinMouseClicked() {                                     
+    }
+
+    private void backSinMouseClicked() {
         // TODO add your handling code here:
         card = (CardLayout) this.vista.prinCard.getLayout();
-        
+
         card.show(this.vista.prinCard, "eleccion");
-        this.vista.txtSin.setText("");
-        this.vista.txtAreaSin.setText("");
-    }   
-    
-        private void btnAsinMouseClicked() {                                     
+        this.vista.txtSinInput.setText("");
+        this.vista.txtAreaSinOutput.setText("");
+    }
+
+    private void btnAsinMouseClicked() {
         // TODO add your handling code here:
-        
+
         card = (CardLayout) this.vista.prinCard.getLayout();
-        
+
         card.show(this.vista.prinCard, "vistaASin");
     }
-        
-        private void btnBackASinMouseClicked() {                                         
+
+    private void btnBackASinMouseClicked() {
         // TODO add your handling code here:
-        
+
         card = (CardLayout) this.vista.prinCard.getLayout();
-        
+
         card.show(this.vista.prinCard, "eleccion");
         this.vista.txtASin.setText("");
         this.vista.txtAreaASin.setText("");
-        
-    }
 
-        
-        
+    }
+    
+     
+
     private Vista vista;
     private CardLayout card;
+    
+     private final static double pi = 3.141592653589;
+    private final static double e = 2.7182818284;
 }

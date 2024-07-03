@@ -473,6 +473,27 @@ public class Series {
     // Fin del metodo expsinx
     
     // inicio del metodo expcosx
+    public static String expCos(double entrada){
+        
+        if(entrada == 0){
+            return String.format("%.8f", ConstantesMatematicas.e);
+        }
+        
+        if(ValorAbsoluto.abs(entrada) > 40.0){
+            return "Entrada no soportable";
+        }
+        
+        double sumaParcial;
+        double salida = 0;
+        
+        for(int z = 0; z < ConstantesMatematicas.contador; z++){
+            
+            sumaParcial = ((Potencia.potencia(Double.parseDouble(cos(entrada)), z)) / (Factorial.calcularFactorial(z)));
+            salida += sumaParcial;
+        }
+        
+        return String.format("%.8f", salida);
+    }
     
 }
 

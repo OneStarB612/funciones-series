@@ -11,6 +11,10 @@ package modelo;
 public class Series {
 
     public static String sin(double input) {
+        
+        if(ValorAbsoluto.abs(input) > 40.0){
+            return "Valido solo para |x| < 40";
+        }
 
         // esto es lo que devolverá el método, empieza en cero porque es una suma
         double valorRetorno = 0.0;
@@ -47,6 +51,10 @@ public class Series {
 
     // inicio para calcular el cos(x)
     public static String cos(double input) {
+        
+        if(ValorAbsoluto.abs(input) > 40.0){
+            return "Valido solo para |x| < 40";
+        }
 
         double valorCos = 0;
 
@@ -418,6 +426,53 @@ public class Series {
         return String.format("%.8f", valor);
         
     }
+    // Fin del metodo atghx
+    
+    // Inicio del metodo acothx
+    
+    public static String acoth(double entrada){
+        
+        if (ValorAbsoluto.abs(entrada) < 1){
+            return "Undefined";
+        }
+        
+        double sumaParcial;
+        double valor = 0;
+        
+        for(int n = 0; n < ConstantesMatematicas.contador; n ++){
+            sumaParcial = 1 / ((2*n + 1) * (Potencia.potencia(valor, (2*n + 1))));
+            valor += sumaParcial;
+        }
+        
+        return String.format("%.8f", valor);
+    }
+    // fin del acoth
+    
+    // Inicio del metodo exp-sin
+    public static String expSin(double entrada){
+        
+        if(entrada == 0){
+            return "1";
+        }
+        
+        if(ValorAbsoluto.abs(entrada) > 40.0){
+            return "Entrada no soportable";
+        }
+        
+        double sumaParcial;
+        double salida = 0;
+        
+        for(int z = 0; z < ConstantesMatematicas.contador; z++){
+            
+            sumaParcial = ((Potencia.potencia(Double.parseDouble(sin(entrada)), z)) / (Factorial.calcularFactorial(z)));
+            salida += sumaParcial;
+        }
+        
+        return String.format("%.8f", salida);
+    }
+    // Fin del metodo expsinx
+    
+    // inicio del metodo expcosx
     
 }
 

@@ -121,7 +121,7 @@ public class Series {
         }
 
         if (entrada > 1 || entrada < -1) {
-            return "Undefine";
+            return "Undefined";
         }
 
         for (int n = 0; n < ConstantesMatematicas.contador; n++) {
@@ -141,7 +141,7 @@ public class Series {
     // Inicio del metodo ArcCos(x)
     public static String arcCos(double DatoEntrada) {
         if (DatoEntrada < -1 || DatoEntrada > 1) {
-            return "Undefine";
+            return "Undefined";
         }
 
         if (DatoEntrada == 0) {
@@ -263,7 +263,7 @@ public class Series {
         
         if(dato == -1){
             
-            return "Undefine";
+            return "Undefined";
         }
         
         if(dato == 1){
@@ -369,6 +369,38 @@ public class Series {
         for(int a = 0; a < ConstantesMatematicas.contador; a++){
             
             sumaParcial = (Potencia.potencia(dato, (2 * a))) / (Factorial.calcularFactorial((2*a)));
+            
+            valor += sumaParcial;
+        }
+        
+        if(Double.toHexString(valor).equalsIgnoreCase("nan"))
+        {
+            return String.format("Entrada no soportable");
+        }
+        
+        if(Double.toHexString(valor).equalsIgnoreCase("nan"))
+        {
+            return String.format("Entrada no soportable");
+        }
+        
+        return String.format("%.8f", valor);
+        
+    }
+    // Fin del metodo coshx
+    
+    // Inicio del metodo atanhx
+    public static String atgh(double dato){
+        
+        if(dato < -1 || dato > 1){
+            return "Undefined";
+        }
+        
+        double sumaParcial;
+        double valor = 0;
+        
+        for(int a = 0; a < ConstantesMatematicas.contador; a++){
+            
+            sumaParcial = (Potencia.potencia(dato, (2 * a + 1))) / (2*a +1);
             
             valor += sumaParcial;
         }

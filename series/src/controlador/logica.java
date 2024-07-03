@@ -216,6 +216,41 @@ public class logica {
             }
         });
         
+        this.vista.btnBackExpx.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackExpxMouseClicked();
+            }
+        });
+        
+        this.vista.labelLn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelLnMouseClicked();
+            }
+        });
+        
+        this.vista.btnBackLn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackLnMouseClicked();
+            }
+        });
+        
+        this.vista.btnIgualLn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIgualLnMouseClicked();
+            }
+        });
+        
+        this.vista.btnLimpiarLn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimpiarLnMouseClicked();
+            }
+        });
+        
 
         this.vista.txtAreaSinOutput.setLineWrap(true);
 
@@ -240,6 +275,10 @@ public class logica {
         this.vista.txtAreaOutputExpx.setLineWrap(true);
 
         this.vista.txtAreaOutputExpx.setWrapStyleWord(true);
+        
+        this.vista.txtAreaOutputLn.setLineWrap(true);
+
+        this.vista.txtAreaOutputLn.setWrapStyleWord(true);
 
         this.vista.setVisible(true);
     }
@@ -368,7 +407,7 @@ public class logica {
      
      private void labelExpxMouseClicked() {
         
-         card = (CardLayout) this.vista.prinCard.getLayout();
+        card = (CardLayout) this.vista.prinCard.getLayout();
 
         card.show(this.vista.prinCard, "vistaExpx");
          
@@ -384,6 +423,24 @@ public class logica {
         this.vista.txtAreaOutputExpx.setText("");
          
     } 
+     
+     private void labelLnMouseClicked() {
+         
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "vistaLn");
+         
+    }
+     
+     private void btnBackLnMouseClicked() {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "eleccion");
+        
+        this.vista.txtInputLn.setText("");
+        
+        this.vista.txtAreaOutputLn.setText("");
+    }
     
     
     /*
@@ -561,7 +618,7 @@ public class logica {
     }
     
      private void btnIgualExpxMouseClicked() {
-        String input = this.vista.txtInputExpx.getText();
+       String input = this.vista.txtInputExpx.getText();
 
        if (input.isEmpty()) {
            JOptionPane.showMessageDialog(null, "La entrada está vacía");
@@ -585,8 +642,33 @@ public class logica {
         this.vista.txtInputExpx.setText("");
         
         this.vista.txtAreaOutputExpx.setText("");
+
+    }
+    
+    private void btnIgualLnMouseClicked() {
+       String input = this.vista.txtInputLn.getText();
+
+       if (input.isEmpty()) {
+           JOptionPane.showMessageDialog(null, "La entrada está vacía");
+        } else {
+            input = input.replaceAll("\\s", "");
+
+            if (TablaCasos.casoCoincide(input)) {
+                this.vista.txtAreaOutputLn.setText(Series.ln(ValorTabla.obtenerValor(input)));
+            } else {
+
+                if (ValidarEntrada.isValidNumber(input)) {
+                    this.vista.txtAreaOutputLn.setText(Series.ln(Double.parseDouble(input)));
+                }
+            }
+        }
+    }
+    
+    private void btnLimpiarLnMouseClicked() {
         
+        this.vista.txtInputLn.setText("");
         
+        this.vista.txtAreaOutputLn.setText("");
     }
 
 

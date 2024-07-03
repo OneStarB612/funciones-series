@@ -253,4 +253,83 @@ public class Series {
         return String.format("%.8f", valor);
     }
     
+    
+    // Inicio para el metodo ln(1+x)
+    public static String ln(double dato){
+        
+        if(dato == 0){
+            return "0.0";
+        }
+        
+        if(dato == -1){
+            
+            return "Undefine";
+        }
+        
+        if(dato == 1){
+            
+            return "0.69314718";
+        }
+        
+        if(dato > 1){
+            return "Valor fuera del intervalo de convergencia";
+        }
+        
+        
+        double sumaParcial;
+        double valor = 0;
+        double alternar = 1;
+        /*
+        
+        if(dato > 1 || dato < -1){
+            
+            double datoMayor = ((dato));
+            
+            valor = -auxiliar(-datoMayor);
+            
+            return String.format("%.8f", (valor));
+            
+        }
+        
+*/
+        for(int a = 1; a < ConstantesMatematicas.contador; a++){
+            
+            sumaParcial = ((Potencia.potencia(dato, a)) / (a));
+            
+            sumaParcial *= alternar;
+            
+            valor += sumaParcial;
+            
+            alternar *= (-1);
+        }
+        
+        return String.format("%.8f", valor);
+    }
+    
+    /*
+    public static double auxiliar(double dato){
+        
+        double sumaParcial;
+        double valor = 0.0;
+        double alternar = 1;
+        
+         for(int a = 1; a < ConstantesMatematicas.contador; a++){
+            
+            sumaParcial = ((Potencia.potencia(dato, a)) / (a));
+            
+           
+            
+            valor += sumaParcial;
+            
+            alternar *= (-1);
+        }
+         
+         return valor;
+         
+        
+    }
+    
+    */
+    
 }
+

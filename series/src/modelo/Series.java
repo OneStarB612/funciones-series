@@ -32,12 +32,12 @@ public class Series {
             alternar *= -1;
         }
        
-        if(Double.toHexString(valorRetorno).equalsIgnoreCase("nan"))
+        if(Double.toString(valorRetorno).equalsIgnoreCase("nan"))
         {
             return String.format("Entrada no soportable");
         }
         
-        if(Double.toHexString(valorRetorno).equalsIgnoreCase("nan"))
+        if(Double.toString(valorRetorno).equalsIgnoreCase("nan"))
         {
             return String.format("Entrada no soportable");
         }
@@ -216,8 +216,41 @@ public class Series {
 
             return String.format("%.8f", (ConstantesMatematicas.pi / 2) - valorArcTg);
         }
-
-        
-
     }
+    // Fin del metodo de arctgx
+    
+    // inicio del metodo para calcular exp(x)
+    
+    public static String expx(double dato){
+        
+        if(dato == 0){
+            return "1";
+        }
+        if(dato == 1){
+            return String.format("%.8f", ConstantesMatematicas.e);
+        }
+        
+        double valor = 0;
+        double sumaParcial;
+        
+        for (int a = 0; a < ConstantesMatematicas.contador; a++){
+            
+            sumaParcial = (Potencia.potencia(dato, a)) / (Factorial.calcularFactorial(a));
+            
+            valor += sumaParcial;
+        }
+        
+        if(Double.toHexString(valor).equalsIgnoreCase("nan"))
+        {
+            return String.format("Entrada no soportable");
+        }
+        
+        if(Double.toString(valor).equalsIgnoreCase("nan"))
+        {
+            return String.format("Entrada no soportable");
+        }
+        
+        return String.format("%.8f", valor);
+    }
+    
 }

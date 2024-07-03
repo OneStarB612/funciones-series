@@ -62,7 +62,8 @@ public class logica {
             }
         });
 
-        // Evento para el labelIgualSinx que esta en la ventana de vistaSin, al presionar mostrara el valor del sinx.
+        // Evento para el labelIgualSinx que esta en la ventana de vistaSin, 
+        //al presionar mostrara el valor del sinx.
         // No confundir con el labelSinEleccion.
         this.vista.labelIgualSinX.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -173,7 +174,7 @@ public class logica {
             }
         });
         
-        this.vista.btnBackArcTg.addMouseListener(new java.awt.event.MouseAdapter() {
+        this.vista.btnBackTg.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnBackArcTgMouseClicked();
@@ -194,11 +195,51 @@ public class logica {
             }
         });
         
+        this.vista.labelExpx.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelExpxMouseClicked();
+            }
+        });
+        
+        this.vista.btnIgualExpx.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIgualExpxMouseClicked();
+            }
+        });
+        
+        this.vista.btnLimpiarExpx.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimpiarExpxMouseClicked();
+            }
+        });
         
 
         this.vista.txtAreaSinOutput.setLineWrap(true);
 
         this.vista.txtAreaSinOutput.setWrapStyleWord(true);
+        
+        this.vista.txtAreaASinOutput.setLineWrap(true);
+
+        this.vista.txtAreaASinOutput.setWrapStyleWord(true);
+        
+        this.vista.txtAreaOutputArcCos.setLineWrap(true);
+
+        this.vista.txtAreaOutputArcCos.setWrapStyleWord(true);
+        
+        this.vista.txtAreaOutputArcTg.setLineWrap(true);
+
+        this.vista.txtAreaOutputArcTg.setWrapStyleWord(true);
+        
+        this.vista.txtAreaOutputCos.setLineWrap(true);
+
+        this.vista.txtAreaOutputCos.setWrapStyleWord(true);
+        
+        this.vista.txtAreaOutputExpx.setLineWrap(true);
+
+        this.vista.txtAreaOutputExpx.setWrapStyleWord(true);
 
         this.vista.setVisible(true);
     }
@@ -324,6 +365,25 @@ public class logica {
         
         this.vista.txtAreaOutputArcTg.setText("");
     }
+     
+     private void labelExpxMouseClicked() {
+        
+         card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "vistaExpx");
+         
+    }
+     
+     private void btnBackExpxMouseClicked() {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "eleccion");
+        
+        this.vista.txtInputExpx.setText("");
+        
+        this.vista.txtAreaOutputExpx.setText("");
+         
+    } 
     
     
     /*
@@ -498,6 +558,35 @@ public class logica {
         this.vista.txtInputArcTg.setText("");
         
         this.vista.txtAreaOutputArcTg.setText("");
+    }
+    
+     private void btnIgualExpxMouseClicked() {
+        String input = this.vista.txtInputExpx.getText();
+
+       if (input.isEmpty()) {
+           JOptionPane.showMessageDialog(null, "La entrada está vacía");
+        } else {
+            input = input.replaceAll("\\s", "");
+
+            if (TablaCasos.casoCoincide(input)) {
+                this.vista.txtAreaOutputExpx.setText(Series.expx(ValorTabla.obtenerValor(input)));
+            } else {
+
+                if (ValidarEntrada.isValidNumber(input)) {
+                    this.vista.txtAreaOutputExpx.setText(Series.expx(Double.parseDouble(input)));
+                }
+            }
+        }
+         
+     }
+    
+    private void btnLimpiarExpxMouseClicked() {
+        
+        this.vista.txtInputExpx.setText("");
+        
+        this.vista.txtAreaOutputExpx.setText("");
+        
+        
     }
 
 

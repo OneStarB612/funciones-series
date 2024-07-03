@@ -38,7 +38,7 @@ public class Vista extends javax.swing.JFrame {
         labelSinEleccion = new javax.swing.JLabel();
         labelCosEleccion = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        labelArcoTgEleccion = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
@@ -97,6 +97,16 @@ public class Vista extends javax.swing.JFrame {
         txtAreaOutputArcCos = new javax.swing.JTextArea();
         labelAnimArcCos = new javax.swing.JLabel();
         btnBackArcCos = new javax.swing.JLabel();
+        vistaArcTg = new javax.swing.JPanel();
+        txtInputArcTg = new javax.swing.JTextField();
+        jPanel26 = new javax.swing.JPanel();
+        btnIgualArcTg = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        btnLimpiarArcTg = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        txtAreaOutputArcTg = new javax.swing.JTextArea();
+        labelAnimArcCos1 = new javax.swing.JLabel();
+        btnBackArcTg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(5, 2, 36));
@@ -196,13 +206,18 @@ public class Vista extends javax.swing.JFrame {
         jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel8.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 80, 30));
 
-        jLabel15.setBackground(new java.awt.Color(255, 116, 199));
-        jLabel15.setFont(new java.awt.Font("Lucida Bright", 3, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText(" acos(x)");
-        jLabel15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 153), new java.awt.Color(255, 51, 153), new java.awt.Color(255, 153, 153), new java.awt.Color(255, 153, 153)));
-        jLabel15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel8.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 80, 30));
+        labelArcoTgEleccion.setBackground(new java.awt.Color(255, 116, 199));
+        labelArcoTgEleccion.setFont(new java.awt.Font("Lucida Bright", 3, 18)); // NOI18N
+        labelArcoTgEleccion.setForeground(new java.awt.Color(255, 255, 255));
+        labelArcoTgEleccion.setText("  atg(x)");
+        labelArcoTgEleccion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 153), new java.awt.Color(255, 51, 153), new java.awt.Color(255, 153, 153), new java.awt.Color(255, 153, 153)));
+        labelArcoTgEleccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelArcoTgEleccion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelArcoTgEleccionMouseClicked(evt);
+            }
+        });
+        jPanel8.add(labelArcoTgEleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 80, 30));
 
         jLabel11.setBackground(new java.awt.Color(255, 116, 199));
         jLabel11.setFont(new java.awt.Font("Lucida Bright", 3, 18)); // NOI18N
@@ -640,6 +655,81 @@ public class Vista extends javax.swing.JFrame {
 
         prinCard.add(vistaArcCos, "vistaArcCos");
 
+        vistaArcTg.setBackground(new java.awt.Color(0, 34, 35));
+        vistaArcTg.setMinimumSize(new java.awt.Dimension(900, 600));
+        vistaArcTg.setPreferredSize(new java.awt.Dimension(900, 600));
+        vistaArcTg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtInputArcTg.setBackground(new java.awt.Color(255, 255, 255));
+        txtInputArcTg.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        txtInputArcTg.setForeground(new java.awt.Color(0, 0, 102));
+        txtInputArcTg.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(223, 128, 252), new java.awt.Color(255, 204, 245), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 204, 153)));
+        vistaArcTg.add(txtInputArcTg, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 270, 30));
+
+        jPanel26.setBackground(new java.awt.Color(0, 34, 35));
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnIgualArcTg.setBackground(new java.awt.Color(255, 116, 199));
+        btnIgualArcTg.setFont(new java.awt.Font("Bodoni MT Black", 3, 24)); // NOI18N
+        btnIgualArcTg.setForeground(new java.awt.Color(255, 255, 255));
+        btnIgualArcTg.setText("  ~");
+        btnIgualArcTg.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(0, 204, 153), new java.awt.Color(255, 102, 204), new java.awt.Color(255, 153, 204)));
+        btnIgualArcTg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIgualArcTg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIgualArcTgMouseClicked(evt);
+            }
+        });
+        jPanel26.add(btnIgualArcTg, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 50, 40));
+
+        jLabel8.setFont(new java.awt.Font("Bodoni MT Black", 3, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText(" ~");
+        jPanel26.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 30, -1));
+
+        btnLimpiarArcTg.setBackground(new java.awt.Color(255, 116, 199));
+        btnLimpiarArcTg.setFont(new java.awt.Font("Bodoni MT Black", 3, 24)); // NOI18N
+        btnLimpiarArcTg.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpiarArcTg.setText("  CE");
+        btnLimpiarArcTg.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 255), new java.awt.Color(0, 0, 255), new java.awt.Color(255, 204, 204), new java.awt.Color(255, 204, 204)));
+        btnLimpiarArcTg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiarArcTg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimpiarArcTgMouseClicked(evt);
+            }
+        });
+        jPanel26.add(btnLimpiarArcTg, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 80, 40));
+
+        vistaArcTg.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 260, 70));
+
+        txtAreaOutputArcTg.setBackground(new java.awt.Color(255, 255, 255));
+        txtAreaOutputArcTg.setColumns(20);
+        txtAreaOutputArcTg.setFont(new java.awt.Font("Lucida Sans Typewriter", 3, 24)); // NOI18N
+        txtAreaOutputArcTg.setForeground(new java.awt.Color(102, 0, 102));
+        txtAreaOutputArcTg.setRows(5);
+        txtAreaOutputArcTg.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 102, 255), new java.awt.Color(51, 102, 255), new java.awt.Color(0, 102, 0), new java.awt.Color(0, 102, 51)));
+        jScrollPane5.setViewportView(txtAreaOutputArcTg);
+
+        vistaArcTg.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 390, 180));
+
+        labelAnimArcCos1.setBackground(new java.awt.Color(255, 255, 255));
+        vistaArcTg.add(labelAnimArcCos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 470, 580));
+
+        btnBackArcTg.setBackground(new java.awt.Color(255, 116, 199));
+        btnBackArcTg.setFont(new java.awt.Font("Book Antiqua", 3, 24)); // NOI18N
+        btnBackArcTg.setForeground(new java.awt.Color(255, 255, 255));
+        btnBackArcTg.setText(" Back");
+        btnBackArcTg.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 153), new java.awt.Color(255, 153, 153), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        btnBackArcTg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBackArcTg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackArcTgMouseClicked(evt);
+            }
+        });
+        vistaArcTg.add(btnBackArcTg, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 70, 30));
+
+        prinCard.add(vistaArcTg, "vistaArcTg");
+
         getContentPane().add(prinCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -721,6 +811,22 @@ public class Vista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_labelArcCosEleccionMouseClicked
 
+    private void btnIgualArcTgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIgualArcTgMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIgualArcTgMouseClicked
+
+    private void btnLimpiarArcTgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimpiarArcTgMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimpiarArcTgMouseClicked
+
+    private void btnBackArcTgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackArcTgMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackArcTgMouseClicked
+
+    private void labelArcoTgEleccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelArcoTgEleccionMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelArcoTgEleccionMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -731,11 +837,14 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JLabel btnBack;
     public javax.swing.JLabel btnBackASin;
     public javax.swing.JLabel btnBackArcCos;
+    public javax.swing.JLabel btnBackArcTg;
     public javax.swing.JLabel btnBackCos;
     public javax.swing.JLabel btnIgualArcCos;
+    public javax.swing.JLabel btnIgualArcTg;
     public javax.swing.JLabel btnIgualCos;
     public javax.swing.JLabel btnLimpiarASin;
     public javax.swing.JLabel btnLimpiarArcCos;
+    public javax.swing.JLabel btnLimpiarArcTg;
     public javax.swing.JLabel btnLimpiarCos;
     public javax.swing.JPanel eleccion;
     public javax.swing.JPanel fondoPrincipal;
@@ -744,7 +853,6 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel11;
     public javax.swing.JLabel jLabel13;
     public javax.swing.JLabel jLabel14;
-    public javax.swing.JLabel jLabel15;
     public javax.swing.JLabel jLabel16;
     public javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
@@ -753,6 +861,7 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -762,6 +871,7 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -770,12 +880,15 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     public javax.swing.JLabel jlabelASinAnim;
     public javax.swing.JLabel jlabelASinAnim1;
     private javax.swing.JLabel jlabelSerieRama1;
     public javax.swing.JLabel labelASinEleccion;
     public javax.swing.JLabel labelAnimArcCos;
+    public javax.swing.JLabel labelAnimArcCos1;
     public javax.swing.JLabel labelArcCosEleccion;
+    public javax.swing.JLabel labelArcoTgEleccion;
     public javax.swing.JLabel labelBackSin;
     public javax.swing.JLabel labelCosEleccion;
     public javax.swing.JLabel labelIgualSinX;
@@ -787,13 +900,16 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JTextField txtASinInput;
     public javax.swing.JTextArea txtAreaASinOutput;
     public javax.swing.JTextArea txtAreaOutputArcCos;
+    public javax.swing.JTextArea txtAreaOutputArcTg;
     public javax.swing.JTextArea txtAreaOutputCos;
     public javax.swing.JTextArea txtAreaSinOutput;
     public javax.swing.JTextField txtInputArcCos;
+    public javax.swing.JTextField txtInputArcTg;
     public javax.swing.JTextField txtInputCos;
     public javax.swing.JTextField txtSinInput;
     private javax.swing.JPanel vistaASin;
     private javax.swing.JPanel vistaArcCos;
+    private javax.swing.JPanel vistaArcTg;
     private javax.swing.JPanel vistaCos;
     private javax.swing.JPanel vistaSin;
     // End of variables declaration//GEN-END:variables

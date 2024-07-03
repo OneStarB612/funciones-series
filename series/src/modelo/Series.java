@@ -331,5 +331,61 @@ public class Series {
     
     */
     
+    // Inicio del metodo para sinhx
+    public static String sinh(double dato){
+        
+        double sumaParcial;
+        double valor = 0;
+        
+        for(int a = 0; a < ConstantesMatematicas.contador; a++){
+            
+            sumaParcial = (Potencia.potencia(dato, (2 * a + 1))) / (Factorial.calcularFactorial((2*a +1)));
+            
+            valor += sumaParcial;
+        }
+        
+        if(Double.toHexString(valor).equalsIgnoreCase("nan"))
+        {
+            return String.format("Entrada no soportable");
+        }
+        
+        if(Double.toHexString(valor).equalsIgnoreCase("nan"))
+        {
+            return String.format("Entrada no soportable");
+        }
+        
+        return String.format("%.8f", valor);
+        
+    }
+    
+    // fin del metodo sinhx
+    
+    // Inicio del del metodo coshx.
+    public static String cosh(double dato){
+        
+        double sumaParcial;
+        double valor = 0;
+        
+        for(int a = 0; a < ConstantesMatematicas.contador; a++){
+            
+            sumaParcial = (Potencia.potencia(dato, (2 * a))) / (Factorial.calcularFactorial((2*a)));
+            
+            valor += sumaParcial;
+        }
+        
+        if(Double.toHexString(valor).equalsIgnoreCase("nan"))
+        {
+            return String.format("Entrada no soportable");
+        }
+        
+        if(Double.toHexString(valor).equalsIgnoreCase("nan"))
+        {
+            return String.format("Entrada no soportable");
+        }
+        
+        return String.format("%.8f", valor);
+        
+    }
+    
 }
 

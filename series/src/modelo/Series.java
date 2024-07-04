@@ -128,7 +128,7 @@ public class Series {
             return ("-1.5707963");
         }
 
-        if (entrada > 1 || entrada < -1) {
+        if (ValorAbsoluto.abs(entrada) >= 1.0) {
             return "Undefined";
         }
 
@@ -148,7 +148,8 @@ public class Series {
 
     // Inicio del metodo ArcCos(x)
     public static String arcCos(double DatoEntrada) {
-        if (DatoEntrada < -1 || DatoEntrada > 1) {
+        
+        if (ValorAbsoluto.abs(DatoEntrada) >= 1.0) {
             return "Undefined";
         }
 
@@ -166,7 +167,9 @@ public class Series {
 
         return String.format("%.8f", ((ConstantesMatematicas.pi / 2) - Double.parseDouble(arcoSin(DatoEntrada))));
     }
-
+    // Fin del metodo arcosx
+    
+    // Inicio del metodo arctgx
     public static String arcTg(double dato) {
 
         if (dato == 0) {
@@ -227,8 +230,7 @@ public class Series {
     }
     // Fin del metodo de arctgx
     
-    // inicio del metodo para calcular exp(x)
-    
+    // inicio del metodo para calcular exp(x).
     public static String expx(double dato){
         
         if(dato == 0){
@@ -297,9 +299,8 @@ public class Series {
             
             return String.format("%.8f", (valor));
             
-        }
+        }*/
         
-*/
         for(int a = 1; a < ConstantesMatematicas.contador; a++){
             
             sumaParcial = ((Potencia.potencia(dato, a)) / (a));
@@ -399,7 +400,7 @@ public class Series {
     // Inicio del metodo atanhx
     public static String atgh(double dato){
         
-        if(dato < -1 || dato > 1){
+        if(ValorAbsoluto.abs(dato) >= 1.0){
             return "Undefined";
         }
         

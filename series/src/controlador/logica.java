@@ -251,6 +251,34 @@ public class logica {
             }
         });
         
+        this.vista.labelSinh.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelSinhMouseClicked();
+            }
+        });
+        
+        this.vista.btnBackSinh.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackSinhMouseClicked();
+            }
+        });
+        
+        this.vista.btnIgualSinh.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIgualSinhMouseClicked();
+            }
+        });
+        
+        this.vista.btnLimpiarSinh.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimpiarSinhMouseClicked();
+            }
+        });
+        
 
         this.vista.txtAreaSinOutput.setLineWrap(true);
 
@@ -440,6 +468,22 @@ public class logica {
         this.vista.txtInputLn.setText("");
         
         this.vista.txtAreaOutputLn.setText("");
+    }
+     
+     private void labelSinhMouseClicked() {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "vistaSinh");
+    }
+     
+     private void btnBackSinhMouseClicked() {
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "eleccion");
+        
+        this.vista.txtInputSinh.setText("");
+        
+        this.vista.txtAreaOutputSinh.setText("");
     }
     
     
@@ -669,6 +713,31 @@ public class logica {
         this.vista.txtInputLn.setText("");
         
         this.vista.txtAreaOutputLn.setText("");
+    }
+    
+    private void btnIgualSinhMouseClicked() {
+       String input = this.vista.txtInputSinh.getText();
+
+       if (input.isEmpty()) {
+           JOptionPane.showMessageDialog(null, "La entrada está vacía");
+        } else {
+            input = input.replaceAll("\\s", "");
+
+            if (TablaCasos.casoCoincide(input)) {
+                this.vista.txtAreaOutputSinh.setText(Series.sinh(ValorTabla.obtenerValor(input)));
+            } else {
+
+                if (ValidarEntrada.isValidNumber(input)) {
+                    this.vista.txtAreaOutputSinh.setText(Series.sinh(Double.parseDouble(input)));
+                }
+            }
+        }
+    }
+    
+    private void btnLimpiarSinhMouseClicked() {
+        this.vista.txtInputSinh.setText("");
+        
+        this.vista.txtAreaOutputSinh.setText("");   
     }
 
 

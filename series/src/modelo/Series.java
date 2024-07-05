@@ -433,10 +433,12 @@ public class Series {
     
     public static String acoth(double entrada){
         
-        if (ValorAbsoluto.abs(entrada) < 1){
+        if (ValorAbsoluto.abs(entrada) <= 1){
             return "Undefined";
         }
         
+        return atgh(1/entrada);
+        /*
         double sumaParcial;
         double valor = 0;
         
@@ -445,7 +447,7 @@ public class Series {
             valor += sumaParcial;
         }
         
-        return String.format("%.8f", valor);
+        return String.format("%.8f", valor);*/
     }
     // fin del acoth
     

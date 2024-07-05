@@ -36,16 +36,16 @@ public class Vista extends javax.swing.JFrame {
         labelCosEleccion = new javax.swing.JLabel();
         labelExpx = new javax.swing.JLabel();
         labelArcoTgEleccion = new javax.swing.JLabel();
-        labelCosh = new javax.swing.JLabel();
         labelAtgh = new javax.swing.JLabel();
         labelSinEleccion = new javax.swing.JLabel();
+        labelAcoth = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         labelArcCosEleccion = new javax.swing.JLabel();
         labelSinh = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         labelASinEleccion = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        labelCosh = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         btnBack = new javax.swing.JLabel();
         fondoRamanujan1 = new javax.swing.JLabel();
@@ -152,6 +152,16 @@ public class Vista extends javax.swing.JFrame {
         txtAreaOutputAtgh = new javax.swing.JTextArea();
         jlabelASinAnim2 = new javax.swing.JLabel();
         btnBackAtgh = new javax.swing.JLabel();
+        vistaAcoth = new javax.swing.JPanel();
+        txtInputAcoth = new javax.swing.JTextField();
+        jPanel32 = new javax.swing.JPanel();
+        btnIgualAcoth = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        btnLimpiarAcoth = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        txtAreaOutputAcoth = new javax.swing.JTextArea();
+        jlabelASinAnim3 = new javax.swing.JLabel();
+        btnBackAcoth = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(5, 2, 36));
@@ -171,9 +181,9 @@ public class Vista extends javax.swing.JFrame {
         fondoPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelSalir.setBackground(new java.awt.Color(255, 116, 199));
-        labelSalir.setFont(new java.awt.Font("Bodoni MT Black", 3, 24)); // NOI18N
+        labelSalir.setFont(new java.awt.Font("Old English Text MT", 3, 24)); // NOI18N
         labelSalir.setForeground(new java.awt.Color(255, 255, 255));
-        labelSalir.setText("  Salir ");
+        labelSalir.setText(" SALIR");
         labelSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 155, 214), new java.awt.Color(255, 155, 214), new java.awt.Color(255, 155, 214), new java.awt.Color(255, 155, 214)));
         labelSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -181,12 +191,12 @@ public class Vista extends javax.swing.JFrame {
                 labelSalirMouseClicked(evt);
             }
         });
-        fondoPrincipal.add(labelSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 110, 50));
+        fondoPrincipal.add(labelSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 120, 50));
 
         labelIniciar.setBackground(new java.awt.Color(255, 116, 199));
-        labelIniciar.setFont(new java.awt.Font("Bodoni MT Black", 3, 24)); // NOI18N
+        labelIniciar.setFont(new java.awt.Font("Old English Text MT", 3, 24)); // NOI18N
         labelIniciar.setForeground(new java.awt.Color(255, 255, 255));
-        labelIniciar.setText(" Iniciar");
+        labelIniciar.setText(" INICIAR");
         labelIniciar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 155, 214), new java.awt.Color(255, 155, 214), new java.awt.Color(255, 155, 214), new java.awt.Color(255, 155, 214)));
         labelIniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelIniciar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -194,7 +204,7 @@ public class Vista extends javax.swing.JFrame {
                 labelIniciarMouseClicked(evt);
             }
         });
-        fondoPrincipal.add(labelIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 120, 50));
+        fondoPrincipal.add(labelIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 160, 50));
 
         prinCard.add(fondoPrincipal, "principal");
 
@@ -223,7 +233,7 @@ public class Vista extends javax.swing.JFrame {
         labelExpx.setBackground(new java.awt.Color(255, 116, 199));
         labelExpx.setFont(new java.awt.Font("Lucida Bright", 3, 24)); // NOI18N
         labelExpx.setForeground(new java.awt.Color(255, 255, 255));
-        labelExpx.setText(" exp(x)");
+        labelExpx.setText("  exp(x)");
         labelExpx.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 102, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 204, 51)));
         labelExpx.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelExpx.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -231,7 +241,7 @@ public class Vista extends javax.swing.JFrame {
                 labelExpxMouseClicked(evt);
             }
         });
-        jPanel8.add(labelExpx, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 90, 50));
+        jPanel8.add(labelExpx, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 100, 50));
 
         labelArcoTgEleccion.setBackground(new java.awt.Color(255, 116, 199));
         labelArcoTgEleccion.setFont(new java.awt.Font("Lucida Bright", 3, 24)); // NOI18N
@@ -246,19 +256,6 @@ public class Vista extends javax.swing.JFrame {
         });
         jPanel8.add(labelArcoTgEleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 90, 50));
 
-        labelCosh.setBackground(new java.awt.Color(255, 116, 199));
-        labelCosh.setFont(new java.awt.Font("Lucida Bright", 3, 20)); // NOI18N
-        labelCosh.setForeground(new java.awt.Color(255, 255, 255));
-        labelCosh.setText(" cosh(x)");
-        labelCosh.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 102), new java.awt.Color(255, 51, 51), new java.awt.Color(204, 255, 51), new java.awt.Color(0, 204, 0)));
-        labelCosh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        labelCosh.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelCoshMouseClicked(evt);
-            }
-        });
-        jPanel8.add(labelCosh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 90, 50));
-
         labelAtgh.setBackground(new java.awt.Color(255, 116, 199));
         labelAtgh.setFont(new java.awt.Font("Lucida Bright", 3, 20)); // NOI18N
         labelAtgh.setForeground(new java.awt.Color(255, 255, 255));
@@ -270,7 +267,7 @@ public class Vista extends javax.swing.JFrame {
                 labelAtghMouseClicked(evt);
             }
         });
-        jPanel8.add(labelAtgh, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 90, 50));
+        jPanel8.add(labelAtgh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 90, 50));
 
         labelSinEleccion.setBackground(new java.awt.Color(255, 116, 199));
         labelSinEleccion.setFont(new java.awt.Font("Lucida Bright", 3, 24)); // NOI18N
@@ -285,7 +282,20 @@ public class Vista extends javax.swing.JFrame {
         });
         jPanel8.add(labelSinEleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 90, 50));
 
-        eleccion.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 250, 320));
+        labelAcoth.setBackground(new java.awt.Color(255, 116, 199));
+        labelAcoth.setFont(new java.awt.Font("Lucida Bright", 3, 20)); // NOI18N
+        labelAcoth.setForeground(new java.awt.Color(255, 255, 255));
+        labelAcoth.setText(" acoth(x)");
+        labelAcoth.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 0), new java.awt.Color(255, 255, 204), new java.awt.Color(102, 0, 0), new java.awt.Color(255, 204, 204)));
+        labelAcoth.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelAcoth.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelAcothMouseClicked(evt);
+            }
+        });
+        jPanel8.add(labelAcoth, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 100, 50));
+
+        eleccion.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 260, 320));
 
         jPanel10.setBackground(new java.awt.Color(25, 0, 13));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -306,7 +316,7 @@ public class Vista extends javax.swing.JFrame {
         labelSinh.setBackground(new java.awt.Color(255, 116, 199));
         labelSinh.setFont(new java.awt.Font("Lucida Bright", 3, 20)); // NOI18N
         labelSinh.setForeground(new java.awt.Color(255, 255, 255));
-        labelSinh.setText("   sinh(x)");
+        labelSinh.setText("  sinh(x)");
         labelSinh.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 102), new java.awt.Color(255, 102, 255), new java.awt.Color(204, 153, 255), new java.awt.Color(102, 51, 255)));
         labelSinh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelSinh.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -314,23 +324,7 @@ public class Vista extends javax.swing.JFrame {
                 labelSinhMouseClicked(evt);
             }
         });
-        jPanel10.add(labelSinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 100, 50));
-
-        jLabel5.setBackground(new java.awt.Color(255, 116, 199));
-        jLabel5.setFont(new java.awt.Font("Lucida Bright", 3, 20)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("  acoh(x)");
-        jLabel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 0), new java.awt.Color(255, 255, 204), new java.awt.Color(102, 0, 0), new java.awt.Color(255, 204, 204)));
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 100, 50));
-
-        jLabel16.setBackground(new java.awt.Color(255, 116, 199));
-        jLabel16.setFont(new java.awt.Font("Lucida Bright", 3, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText(" exp(sinx)");
-        jLabel16.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 255, 204), new java.awt.Color(204, 255, 204), new java.awt.Color(204, 204, 255), new java.awt.Color(204, 204, 255)));
-        jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel10.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 100, 50));
+        jPanel10.add(labelSinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 100, 50));
 
         labelASinEleccion.setBackground(new java.awt.Color(255, 116, 199));
         labelASinEleccion.setFont(new java.awt.Font("Lucida Bright", 3, 20)); // NOI18N
@@ -353,6 +347,27 @@ public class Vista extends javax.swing.JFrame {
         jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel10.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 100, 50));
 
+        labelCosh.setBackground(new java.awt.Color(255, 116, 199));
+        labelCosh.setFont(new java.awt.Font("Lucida Bright", 3, 20)); // NOI18N
+        labelCosh.setForeground(new java.awt.Color(255, 255, 255));
+        labelCosh.setText("  cosh(x)");
+        labelCosh.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 102), new java.awt.Color(255, 51, 51), new java.awt.Color(204, 255, 51), new java.awt.Color(0, 204, 0)));
+        labelCosh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelCosh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelCoshMouseClicked(evt);
+            }
+        });
+        jPanel10.add(labelCosh, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 100, 50));
+
+        jLabel16.setBackground(new java.awt.Color(255, 116, 199));
+        jLabel16.setFont(new java.awt.Font("Lucida Bright", 3, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText(" exp(sinx)");
+        jLabel16.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 255, 204), new java.awt.Color(204, 255, 204), new java.awt.Color(204, 204, 255), new java.awt.Color(204, 204, 255)));
+        jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel10.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 100, 50));
+
         eleccion.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 270, 310));
 
         jPanel22.setBackground(new java.awt.Color(25, 0, 13));
@@ -374,7 +389,7 @@ public class Vista extends javax.swing.JFrame {
         eleccion.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 110, 70));
 
         fondoRamanujan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ramafondo.png"))); // NOI18N
-        eleccion.add(fondoRamanujan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 630, 460));
+        eleccion.add(fondoRamanujan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 630, 460));
 
         jlabelSerieRama1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/serierama.png"))); // NOI18N
         eleccion.add(jlabelSerieRama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 540, 140));
@@ -909,7 +924,7 @@ public class Vista extends javax.swing.JFrame {
 
         txtAreaOutputLn.setBackground(new java.awt.Color(255, 255, 255));
         txtAreaOutputLn.setColumns(20);
-        txtAreaOutputLn.setFont(new java.awt.Font("Lucida Sans Typewriter", 3, 24)); // NOI18N
+        txtAreaOutputLn.setFont(new java.awt.Font("Old English Text MT", 3, 24)); // NOI18N
         txtAreaOutputLn.setForeground(new java.awt.Color(102, 0, 102));
         txtAreaOutputLn.setRows(5);
         txtAreaOutputLn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 255, 204), new java.awt.Color(102, 255, 204), new java.awt.Color(51, 51, 255), new java.awt.Color(0, 0, 204)));
@@ -1062,10 +1077,10 @@ public class Vista extends javax.swing.JFrame {
 
         vistaCosh.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 260, 70));
 
-        txtAreaOutputCosh.setBackground(new java.awt.Color(255, 255, 255));
+        txtAreaOutputCosh.setBackground(new java.awt.Color(57, 0, 96));
         txtAreaOutputCosh.setColumns(20);
-        txtAreaOutputCosh.setFont(new java.awt.Font("Lucida Sans Typewriter", 3, 24)); // NOI18N
-        txtAreaOutputCosh.setForeground(new java.awt.Color(102, 0, 102));
+        txtAreaOutputCosh.setFont(new java.awt.Font("Magneto", 3, 18)); // NOI18N
+        txtAreaOutputCosh.setForeground(new java.awt.Color(252, 224, 255));
         txtAreaOutputCosh.setRows(5);
         txtAreaOutputCosh.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(43, 0, 17), new java.awt.Color(43, 0, 17), new java.awt.Color(43, 0, 17), new java.awt.Color(43, 0, 17)));
         jScrollPane9.setViewportView(txtAreaOutputCosh);
@@ -1139,7 +1154,7 @@ public class Vista extends javax.swing.JFrame {
 
         txtAreaOutputAtgh.setBackground(new java.awt.Color(255, 255, 255));
         txtAreaOutputAtgh.setColumns(20);
-        txtAreaOutputAtgh.setFont(new java.awt.Font("Lucida Sans Typewriter", 3, 24)); // NOI18N
+        txtAreaOutputAtgh.setFont(new java.awt.Font("Old English Text MT", 3, 24)); // NOI18N
         txtAreaOutputAtgh.setForeground(new java.awt.Color(51, 0, 0));
         txtAreaOutputAtgh.setRows(5);
         txtAreaOutputAtgh.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 102, 255), new java.awt.Color(102, 153, 255), new java.awt.Color(255, 0, 0), new java.awt.Color(255, 0, 51)));
@@ -1164,6 +1179,81 @@ public class Vista extends javax.swing.JFrame {
         vistaAtgh.add(btnBackAtgh, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 70, 40));
 
         prinCard.add(vistaAtgh, "vistaAtgh");
+
+        vistaAcoth.setBackground(new java.awt.Color(0, 30, 1));
+        vistaAcoth.setMinimumSize(new java.awt.Dimension(900, 600));
+        vistaAcoth.setPreferredSize(new java.awt.Dimension(900, 600));
+        vistaAcoth.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtInputAcoth.setBackground(new java.awt.Color(255, 255, 255));
+        txtInputAcoth.setFont(new java.awt.Font("Bodoni MT Black", 3, 18)); // NOI18N
+        txtInputAcoth.setForeground(new java.awt.Color(51, 0, 0));
+        txtInputAcoth.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(204, 204, 255), new java.awt.Color(255, 153, 153), new java.awt.Color(255, 204, 153)));
+        vistaAcoth.add(txtInputAcoth, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 270, 30));
+
+        jPanel32.setBackground(new java.awt.Color(0, 30, 1));
+        jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnIgualAcoth.setBackground(new java.awt.Color(255, 116, 199));
+        btnIgualAcoth.setFont(new java.awt.Font("Bodoni MT Black", 3, 24)); // NOI18N
+        btnIgualAcoth.setForeground(new java.awt.Color(255, 255, 255));
+        btnIgualAcoth.setText("  ~");
+        btnIgualAcoth.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(51, 255, 204), new java.awt.Color(0, 255, 204)));
+        btnIgualAcoth.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIgualAcoth.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIgualAcothMouseClicked(evt);
+            }
+        });
+        jPanel32.add(btnIgualAcoth, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 50, 40));
+
+        jLabel15.setFont(new java.awt.Font("Bodoni MT Black", 3, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText(" ~");
+        jPanel32.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 30, -1));
+
+        btnLimpiarAcoth.setBackground(new java.awt.Color(255, 116, 199));
+        btnLimpiarAcoth.setFont(new java.awt.Font("Bodoni MT Black", 3, 24)); // NOI18N
+        btnLimpiarAcoth.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpiarAcoth.setText(" CLC");
+        btnLimpiarAcoth.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 255), new java.awt.Color(0, 0, 255)));
+        btnLimpiarAcoth.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiarAcoth.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimpiarAcothMouseClicked(evt);
+            }
+        });
+        jPanel32.add(btnLimpiarAcoth, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 80, 40));
+
+        vistaAcoth.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 240, 70));
+
+        txtAreaOutputAcoth.setBackground(new java.awt.Color(255, 255, 255));
+        txtAreaOutputAcoth.setColumns(20);
+        txtAreaOutputAcoth.setFont(new java.awt.Font("Mongolian Baiti", 3, 18)); // NOI18N
+        txtAreaOutputAcoth.setForeground(new java.awt.Color(51, 0, 0));
+        txtAreaOutputAcoth.setRows(5);
+        txtAreaOutputAcoth.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 0), new java.awt.Color(0, 255, 0), new java.awt.Color(255, 0, 0), new java.awt.Color(255, 0, 51)));
+        jScrollPane11.setViewportView(txtAreaOutputAcoth);
+
+        vistaAcoth.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 370, 180));
+
+        jlabelASinAnim3.setBackground(new java.awt.Color(255, 255, 255));
+        vistaAcoth.add(jlabelASinAnim3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 470, 580));
+
+        btnBackAcoth.setBackground(new java.awt.Color(255, 116, 199));
+        btnBackAcoth.setFont(new java.awt.Font("Book Antiqua", 3, 24)); // NOI18N
+        btnBackAcoth.setForeground(new java.awt.Color(255, 255, 255));
+        btnBackAcoth.setText(" Back");
+        btnBackAcoth.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 102), new java.awt.Color(0, 255, 102), new java.awt.Color(204, 255, 204), new java.awt.Color(204, 255, 204)));
+        btnBackAcoth.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBackAcoth.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackAcothMouseClicked(evt);
+            }
+        });
+        vistaAcoth.add(btnBackAcoth, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 70, 40));
+
+        prinCard.add(vistaAcoth, "vistaAcoth");
 
         getContentPane().add(prinCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -1354,6 +1444,22 @@ public class Vista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_labelAtghMouseClicked
 
+    private void btnIgualAcothMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIgualAcothMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIgualAcothMouseClicked
+
+    private void btnLimpiarAcothMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimpiarAcothMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimpiarAcothMouseClicked
+
+    private void btnBackAcothMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackAcothMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackAcothMouseClicked
+
+    private void labelAcothMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelAcothMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelAcothMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1362,6 +1468,7 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JLabel btnASinIgual;
     public javax.swing.JLabel btnBack;
     public javax.swing.JLabel btnBackASin;
+    public javax.swing.JLabel btnBackAcoth;
     public javax.swing.JLabel btnBackArcCos;
     public javax.swing.JLabel btnBackAtgh;
     public javax.swing.JLabel btnBackCos;
@@ -1370,6 +1477,7 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JLabel btnBackLn;
     public javax.swing.JLabel btnBackSinh;
     public javax.swing.JLabel btnBackTg;
+    public javax.swing.JLabel btnIgualAcoth;
     public javax.swing.JLabel btnIgualArcCos;
     public javax.swing.JLabel btnIgualArcTg;
     public javax.swing.JLabel btnIgualAtgh;
@@ -1379,6 +1487,7 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JLabel btnIgualLn;
     public javax.swing.JLabel btnIgualSinh;
     public javax.swing.JLabel btnLimpiarASin;
+    public javax.swing.JLabel btnLimpiarAcoth;
     public javax.swing.JLabel btnLimpiarArcCos;
     public javax.swing.JLabel btnLimpiarArcTg;
     public javax.swing.JLabel btnLimpiarAtgh;
@@ -1387,7 +1496,7 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JLabel btnLimpiarExpx;
     public javax.swing.JLabel btnLimpiarLn;
     public javax.swing.JLabel btnLimpiarSinh;
-    public javax.swing.JPanel eleccion;
+    private javax.swing.JPanel eleccion;
     public javax.swing.JPanel fondoPrincipal;
     private javax.swing.JLabel fondoRamanujan1;
     public javax.swing.JLabel jLabel10;
@@ -1395,11 +1504,11 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     public javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    public javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1416,10 +1525,12 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1431,8 +1542,10 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JLabel jlabelASinAnim;
     public javax.swing.JLabel jlabelASinAnim1;
     public javax.swing.JLabel jlabelASinAnim2;
+    public javax.swing.JLabel jlabelASinAnim3;
     private javax.swing.JLabel jlabelSerieRama1;
     public javax.swing.JLabel labelASinEleccion;
+    public javax.swing.JLabel labelAcoth;
     public javax.swing.JLabel labelAnimArcCos;
     public javax.swing.JLabel labelAnimArcCos1;
     public javax.swing.JLabel labelAnimArcCos2;
@@ -1456,6 +1569,7 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JPanel prinCard;
     public javax.swing.JTextField txtASinInput;
     public javax.swing.JTextArea txtAreaASinOutput;
+    public javax.swing.JTextArea txtAreaOutputAcoth;
     public javax.swing.JTextArea txtAreaOutputArcCos;
     public javax.swing.JTextArea txtAreaOutputArcTg;
     public javax.swing.JTextArea txtAreaOutputAtgh;
@@ -1465,6 +1579,7 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JTextArea txtAreaOutputLn;
     public javax.swing.JTextArea txtAreaOutputSinh;
     public javax.swing.JTextArea txtAreaSinOutput;
+    public javax.swing.JTextField txtInputAcoth;
     public javax.swing.JTextField txtInputArcCos;
     public javax.swing.JTextField txtInputArcTg;
     public javax.swing.JTextField txtInputAtgh;
@@ -1475,6 +1590,7 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JTextField txtInputSinh;
     public javax.swing.JTextField txtSinInput;
     private javax.swing.JPanel vistaASin;
+    private javax.swing.JPanel vistaAcoth;
     private javax.swing.JPanel vistaArcCos;
     private javax.swing.JPanel vistaArcTg;
     private javax.swing.JPanel vistaAtgh;

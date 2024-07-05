@@ -498,5 +498,28 @@ public class Series {
         return String.format("%.8f", salida);
     }
     
+    public static String w(double dato){
+        
+        if(ValorAbsoluto.abs(dato) >= 1/ConstantesMatematicas.e){
+            return "Valor fuera Convergencia";
+        }
+        
+        double suma;
+        double alt =1;
+        double valor = 0;
+        
+        for(int a = 0; a < ConstantesMatematicas.contador; a++){
+         suma = ((alt) * (Potencia.potencia(dato, a))) / (Factorial.calcularFactorial(a));
+         
+         valor += suma;
+         
+         alt *= (-1);
+        }
+        
+        return String.format("%.8f", valor );
+    }
+    
+    
+    
 }
 

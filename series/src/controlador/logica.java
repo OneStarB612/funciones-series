@@ -390,6 +390,34 @@ public class logica {
                 btnLimpiarExpSinMouseClicked();
             }
         });
+        
+        this.vista.labelExpCos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelExpCosMouseClicked();
+            }
+        });
+        
+        this.vista.btnBackExpCos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackExpCosMouseClicked();
+            }
+        });
+        
+        this.vista.btnIgualExpCos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIgualExpCosMouseClicked();
+            }
+        });
+        
+        this.vista.btnLimpiarExpCos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimpiarExpCosMouseClicked();
+            }
+        });
 
         this.vista.txtAreaSinOutput.setLineWrap(true);
 
@@ -649,6 +677,22 @@ public class logica {
         this.vista.txtInputExpSin.setText("");
 
         this.vista.txtAreaOutputExpSin.setText("");
+    }
+    
+    private void labelExpCosMouseClicked(){
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "vistaExpCos");
+    }
+    
+    private void btnBackExpCosMouseClicked(){
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "eleccion");
+
+        this.vista.txtInputExpCos.setText("");
+
+        this.vista.txtAreaOutputExpCos.setText("");
     }
 
     /*
@@ -994,6 +1038,31 @@ public class logica {
         this.vista.txtInputExpSin.setText("");
 
         this.vista.txtAreaOutputExpSin.setText("");
+    }
+    
+    private void btnIgualExpCosMouseClicked(){
+       String input = this.vista.txtInputExpCos.getText();
+
+        if (input.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "La entrada está vacía");
+        } else {
+            input = input.replaceAll("\\s", "");
+
+            if (TablaCasos.casoCoincide(input)) {
+                this.vista.txtAreaOutputExpCos.setText(Series.expSin(ValorTabla.obtenerValor(input)));
+            } else {
+
+                if (ValidarEntrada.isValidNumber(input)) {
+                    this.vista.txtAreaOutputExpCos.setText(Series.expCos(Double.parseDouble(input)));
+                }
+            }
+        }
+    }
+    
+    private void btnLimpiarExpCosMouseClicked(){
+        this.vista.txtInputExpCos.setText("");
+
+        this.vista.txtAreaOutputExpCos.setText("");
     }
 
     // variables

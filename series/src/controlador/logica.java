@@ -418,6 +418,27 @@ public class logica {
                 btnLimpiarExpCosMouseClicked();
             }
         });
+        
+        this.vista.labelW.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelWMouseClicked();
+            }
+        });
+        
+        this.vista.btnBackW.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackWMouseClicked();
+            }
+        });
+        
+        this.vista.btnIgualW.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIgualWMouseClicked();
+            }
+        });
 
         this.vista.txtAreaSinOutput.setLineWrap(true);
 
@@ -693,6 +714,22 @@ public class logica {
         this.vista.txtInputExpCos.setText("");
 
         this.vista.txtAreaOutputExpCos.setText("");
+    }
+    
+    private void labelWMouseClicked(){
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "vistaW");
+    }
+    
+    private void btnBackWMouseClicked(){
+        card = (CardLayout) this.vista.prinCard.getLayout();
+
+        card.show(this.vista.prinCard, "eleccion");
+
+        this.vista.txtInputW.setText("");
+
+        this.vista.txtAreaOutputW.setText("");
     }
 
     /*
@@ -1064,7 +1101,25 @@ public class logica {
 
         this.vista.txtAreaOutputExpCos.setText("");
     }
+    
+    private void btnIgualWMouseClicked(){
+        String input = this.vista.txtInputW.getText();
 
+        if (input.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "La entrada está vacía");
+        } else {
+            input = input.replaceAll("\\s", "");
+
+            if (TablaCasos.casoCoincide(input)) {
+                this.vista.txtAreaOutputW.setText(Series.w(ValorTabla.obtenerValor(input)));
+            } else {
+
+                if (ValidarEntrada.isValidNumber(input)) {
+                    this.vista.txtAreaOutputW.setText(Series.w(Double.parseDouble(input)));
+                }
+            }
+        }
+    }
     // variables
     private Vista vista;
     private CardLayout card;

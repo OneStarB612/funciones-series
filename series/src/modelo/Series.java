@@ -506,17 +506,17 @@ public class Series {
         
         double suma;
         double alt =1;
-        double valor = 0;
+        double lambert = 0;
         
         for(int a = 0; a < ConstantesMatematicas.contador; a++){
          suma = ((alt) * (Potencia.potencia(dato, a))) / (Factorial.calcularFactorial(a));
          
-         valor += suma;
+         lambert += suma;
          
          alt *= (-1);
         }
         
-        return String.format("%.8f", valor );
+        return String.format("%.8f", lambert );
     }
     
     

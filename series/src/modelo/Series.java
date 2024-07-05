@@ -6,7 +6,7 @@ package modelo;
 
 /**
  *
- * @author steve
+ * @author bryan, steve
  */
 public class Series {
 

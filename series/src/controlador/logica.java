@@ -5,6 +5,7 @@
 package controlador;
 
 import java.awt.CardLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelo.Series;
 import modelo.TablaCasos;
@@ -14,7 +15,7 @@ import vista.Vista;
 
 /**
  *
- * @author steve
+ * @author bryan, steve
  */
 public class logica {
 
@@ -439,7 +440,12 @@ public class logica {
                 btnIgualWMouseClicked();
             }
         });
+        
+        ImageIcon logo = new ImageIcon("src/imagenes/LogoPrincipal.png");
 
+        this.vista.setIconImage(logo.getImage());
+
+        
         this.vista.txtAreaSinOutput.setLineWrap(true);
 
         this.vista.txtAreaSinOutput.setWrapStyleWord(true);
@@ -743,7 +749,8 @@ public class logica {
         String input = this.vista.txtSinInput.getText();
 
         if (input.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "La entrada está vacía");
+            ImageIcon icono = new ImageIcon("src/imagenes/logoverde.png");
+            JOptionPane.showMessageDialog(null, "hola", "Entrada vacia", 0, icono);
         } else {
             input = input.replaceAll("\\s", "");
 
